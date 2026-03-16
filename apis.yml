@@ -1,5 +1,20 @@
 aid: microsoft-to-do
+name: Microsoft To Do
+description: >-
+  Microsoft To Do is a task management application that helps users organize
+  and manage their day. It provides API access through Microsoft Graph for
+  managing task lists and tasks across Microsoft 365.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Tasks
+  - Productivity
+  - Microsoft 365
+  - Microsoft
 url: https://raw.githubusercontent.com/api-evangelist/microsoft-to-do/refs/heads/main/apis.yml
+created: '2024-01-01'
+modified: '2026-03-16'
+specificationVersion: '0.19'
 apis:
   - aid: microsoft-to-do:graph-tasks-api
     name: Microsoft Graph To Do Tasks API
@@ -8,14 +23,16 @@ apis:
       - To Do
       - Productivity
       - Microsoft Graph
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     baseURL: https://graph.microsoft.com/v1.0/
     humanURL: https://learn.microsoft.com/en-us/graph/api/resources/todo-overview
     properties:
       - url: https://learn.microsoft.com/en-us/graph/api/resources/todo-overview
         type: Documentation
       - url: https://learn.microsoft.com/en-us/graph/api/resources/todotask
-        type: API Reference
+        type: Reference
+      - url: https://learn.microsoft.com/en-us/graph/auth/
+        type: Authentication
     description: >-
       The Microsoft Graph To Do Tasks API provides access to Microsoft To Do
       task lists and tasks. Developers can create, read, update, and delete
@@ -25,6 +42,10 @@ apis:
 common:
   - type: Portal
     url: https://to-do.microsoft.com/
+  - type: Website
+    url: https://www.microsoft.com/en-us/microsoft-365/microsoft-to-do-list-app
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/graph/todo-concept-overview
   - type: Authentication
     url: https://learn.microsoft.com/en-us/graph/auth/
   - type: SDKs
@@ -36,5 +57,5 @@ common:
   - type: Support
     url: https://support.microsoft.com/
 maintainers:
-  - name: Kin Lane
+  - FN: Kin Lane
     email: kin@apievangelist.com
