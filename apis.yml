@@ -7,10 +7,10 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Tasks
-  - Productivity
-  - Microsoft 365
   - Microsoft
+  - Microsoft 365
+  - Productivity
+  - Tasks
 url: https://raw.githubusercontent.com/api-evangelist/microsoft-to-do/refs/heads/main/apis.yml
 created: '2024-01-01'
 modified: '2026-03-16'
@@ -19,10 +19,10 @@ apis:
   - aid: microsoft-to-do:graph-tasks-api
     name: Microsoft Graph to Do Tasks API
     tags:
+      - Microsoft Graph
+      - Productivity
       - Tasks
       - To Do
-      - Productivity
-      - Microsoft Graph
     image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     baseURL: https://graph.microsoft.com/v1.0/
     humanURL: https://learn.microsoft.com/en-us/graph/api/resources/todo-overview
