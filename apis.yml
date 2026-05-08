@@ -33,6 +33,8 @@ apis:
         type: Reference
       - url: https://learn.microsoft.com/en-us/graph/auth/
         type: Authentication
+      - url: openapi/microsoft-to-do-openapi.yml
+        type: OpenAPI
     description: >-
       The Microsoft Graph To Do Tasks API provides access to Microsoft To Do
       task lists and tasks. Developers can create, read, update, and delete
