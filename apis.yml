@@ -52,9 +52,9 @@ common:
     url: https://learn.microsoft.com/en-us/graph/auth/
   - type: SDKs
     url: https://learn.microsoft.com/en-us/graph/sdks/sdks-overview
-  - type: Terms of Service
+  - type: TermsOfService
     url: https://www.microsoft.com/en-us/legal/terms-of-use
-  - type: Privacy Policy
+  - type: PrivacyPolicy
     url: https://privacy.microsoft.com/en-us/privacystatement
   - type: Support
     url: https://support.microsoft.com/
