@@ -1,0 +1,105 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Microsoft To Do API (Microsoft Graph) — LinkedResources
+  description: 'Microsoft To Do API (Microsoft Graph) — LinkedResources. 2 operations. Lead operation: List linked resources.
+    Self-contained Naftiko capability covering one Microsoft To Do business surface.'
+  tags:
+  - Microsoft To Do
+  - LinkedResources
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MICROSOFT_TO_DO_API_KEY: MICROSOFT_TO_DO_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: microsoft-to-do-linkedresources
+    baseUri: https://graph.microsoft.com/v1.0
+    description: Microsoft To Do API (Microsoft Graph) — LinkedResources business capability. Self-contained, no shared references.
+    resources:
+    - name: me-todo-lists-todoTaskListId-tasks-todoTaskId-linkedResources
+      path: /me/todo/lists/{todoTaskListId}/tasks/{todoTaskId}/linkedResources
+      operations:
+      - name: listlinkedresources
+        method: GET
+        description: List linked resources
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createlinkedresource
+        method: POST
+        description: Create linked resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.MICROSOFT_TO_DO_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: microsoft-to-do-linkedresources-rest
+    port: 8080
+    description: REST adapter for Microsoft To Do API (Microsoft Graph) — LinkedResources. One Spectral-compliant resource
+      per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/me/todo/lists/{todotasklistid}/tasks/{todotaskid}/linkedresources
+      name: me-todo-lists-todotasklistid-tasks-todotaskid-linkedresources
+      description: REST surface for me-todo-lists-todoTaskListId-tasks-todoTaskId-linkedResources.
+      operations:
+      - method: GET
+        name: listlinkedresources
+        description: List linked resources
+        call: microsoft-to-do-linkedresources.listlinkedresources
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createlinkedresource
+        description: Create linked resource
+        call: microsoft-to-do-linkedresources.createlinkedresource
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: microsoft-to-do-linkedresources-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Microsoft To Do API (Microsoft Graph) — LinkedResources. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: list-linked-resources
+      description: List linked resources
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-to-do-linkedresources.listlinkedresources
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-linked-resource
+      description: Create linked resource
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: microsoft-to-do-linkedresources.createlinkedresource
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

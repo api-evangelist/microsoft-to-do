@@ -1,0 +1,229 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Microsoft To Do API (Microsoft Graph) — Tasks
+  description: 'Microsoft To Do API (Microsoft Graph) — Tasks. 6 operations. Lead operation: List todoTasks in list. Self-contained
+    Naftiko capability covering one Microsoft To Do business surface.'
+  tags:
+  - Microsoft To Do
+  - Tasks
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MICROSOFT_TO_DO_API_KEY: MICROSOFT_TO_DO_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: microsoft-to-do-tasks
+    baseUri: https://graph.microsoft.com/v1.0
+    description: Microsoft To Do API (Microsoft Graph) — Tasks business capability. Self-contained, no shared references.
+    resources:
+    - name: me-todo-lists-todoTaskListId-tasks
+      path: /me/todo/lists/{todoTaskListId}/tasks
+      operations:
+      - name: listtodotasks
+        method: GET
+        description: List todoTasks in list
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createtodotask
+        method: POST
+        description: Create todoTask
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: me-todo-lists-todoTaskListId-tasks-delta
+      path: /me/todo/lists/{todoTaskListId}/tasks/delta
+      operations:
+      - name: deltatodotasks
+        method: GET
+        description: Delta query of todoTasks in list
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: me-todo-lists-todoTaskListId-tasks-todoTaskId
+      path: /me/todo/lists/{todoTaskListId}/tasks/{todoTaskId}
+      operations:
+      - name: gettodotask
+        method: GET
+        description: Get todoTask
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: updatetodotask
+        method: PATCH
+        description: Update todoTask
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: deletetodotask
+        method: DELETE
+        description: Delete todoTask
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.MICROSOFT_TO_DO_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: microsoft-to-do-tasks-rest
+    port: 8080
+    description: REST adapter for Microsoft To Do API (Microsoft Graph) — Tasks. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/me/todo/lists/{todotasklistid}/tasks
+      name: me-todo-lists-todotasklistid-tasks
+      description: REST surface for me-todo-lists-todoTaskListId-tasks.
+      operations:
+      - method: GET
+        name: listtodotasks
+        description: List todoTasks in list
+        call: microsoft-to-do-tasks.listtodotasks
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createtodotask
+        description: Create todoTask
+        call: microsoft-to-do-tasks.createtodotask
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/me/todo/lists/{todotasklistid}/tasks/delta
+      name: me-todo-lists-todotasklistid-tasks-delta
+      description: REST surface for me-todo-lists-todoTaskListId-tasks-delta.
+      operations:
+      - method: GET
+        name: deltatodotasks
+        description: Delta query of todoTasks in list
+        call: microsoft-to-do-tasks.deltatodotasks
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/me/todo/lists/{todotasklistid}/tasks/{todotaskid}
+      name: me-todo-lists-todotasklistid-tasks-todotaskid
+      description: REST surface for me-todo-lists-todoTaskListId-tasks-todoTaskId.
+      operations:
+      - method: GET
+        name: gettodotask
+        description: Get todoTask
+        call: microsoft-to-do-tasks.gettodotask
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: updatetodotask
+        description: Update todoTask
+        call: microsoft-to-do-tasks.updatetodotask
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deletetodotask
+        description: Delete todoTask
+        call: microsoft-to-do-tasks.deletetodotask
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: microsoft-to-do-tasks-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Microsoft To Do API (Microsoft Graph) — Tasks. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: list-todotasks-list
+      description: List todoTasks in list
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-to-do-tasks.listtodotasks
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-todotask
+      description: Create todoTask
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: microsoft-to-do-tasks.createtodotask
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delta-query-todotasks-list
+      description: Delta query of todoTasks in list
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-to-do-tasks.deltatodotasks
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-todotask
+      description: Get todoTask
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-to-do-tasks.gettodotask
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-todotask
+      description: Update todoTask
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: microsoft-to-do-tasks.updatetodotask
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-todotask
+      description: Delete todoTask
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: microsoft-to-do-tasks.deletetodotask
+      outputParameters:
+      - type: object
+        mapping: $.
