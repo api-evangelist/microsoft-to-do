@@ -1,0 +1,451 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Microsoft To Do API (Microsoft Graph)",
+    "version": "v1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "TaskLists",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List todoTaskLists",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.microsoft.com/v1.0/me/todo/lists"
+          },
+          "docs": "List todoTaskLists"
+        },
+        {
+          "info": {
+            "name": "Create todoTaskList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://graph.microsoft.com/v1.0/me/todo/lists",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create todoTaskList"
+        },
+        {
+          "info": {
+            "name": "Get todoTaskList",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.microsoft.com/v1.0/me/todo/lists/:todoTaskListId",
+            "params": [
+              {
+                "name": "todoTaskListId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get todoTaskList"
+        },
+        {
+          "info": {
+            "name": "Update todoTaskList",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://graph.microsoft.com/v1.0/me/todo/lists/:todoTaskListId",
+            "params": [
+              {
+                "name": "todoTaskListId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update todoTaskList"
+        },
+        {
+          "info": {
+            "name": "Delete todoTaskList",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://graph.microsoft.com/v1.0/me/todo/lists/:todoTaskListId",
+            "params": [
+              {
+                "name": "todoTaskListId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete todoTaskList"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Tasks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List todoTasks in list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.microsoft.com/v1.0/me/todo/lists/:todoTaskListId/tasks",
+            "params": [
+              {
+                "name": "todoTaskListId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List todoTasks in list"
+        },
+        {
+          "info": {
+            "name": "Create todoTask",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://graph.microsoft.com/v1.0/me/todo/lists/:todoTaskListId/tasks",
+            "params": [
+              {
+                "name": "todoTaskListId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create todoTask"
+        },
+        {
+          "info": {
+            "name": "Get todoTask",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.microsoft.com/v1.0/me/todo/lists/:todoTaskListId/tasks/:todoTaskId",
+            "params": [
+              {
+                "name": "todoTaskListId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "todoTaskId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get todoTask"
+        },
+        {
+          "info": {
+            "name": "Update todoTask",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://graph.microsoft.com/v1.0/me/todo/lists/:todoTaskListId/tasks/:todoTaskId",
+            "params": [
+              {
+                "name": "todoTaskListId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "todoTaskId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update todoTask"
+        },
+        {
+          "info": {
+            "name": "Delete todoTask",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://graph.microsoft.com/v1.0/me/todo/lists/:todoTaskListId/tasks/:todoTaskId",
+            "params": [
+              {
+                "name": "todoTaskListId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "todoTaskId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete todoTask"
+        },
+        {
+          "info": {
+            "name": "Delta query of todoTasks in list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.microsoft.com/v1.0/me/todo/lists/:todoTaskListId/tasks/delta",
+            "params": [
+              {
+                "name": "todoTaskListId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delta query of todoTasks in list"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "ChecklistItems",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List checklist items",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.microsoft.com/v1.0/me/todo/lists/:todoTaskListId/tasks/:todoTaskId/checklistItems",
+            "params": [
+              {
+                "name": "todoTaskListId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "todoTaskId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List checklist items"
+        },
+        {
+          "info": {
+            "name": "Create checklist item",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://graph.microsoft.com/v1.0/me/todo/lists/:todoTaskListId/tasks/:todoTaskId/checklistItems",
+            "params": [
+              {
+                "name": "todoTaskListId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "todoTaskId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create checklist item"
+        },
+        {
+          "info": {
+            "name": "Get checklist item",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.microsoft.com/v1.0/me/todo/lists/:todoTaskListId/tasks/:todoTaskId/checklistItems/:checklistItemId",
+            "params": [
+              {
+                "name": "todoTaskListId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "todoTaskId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "checklistItemId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get checklist item"
+        },
+        {
+          "info": {
+            "name": "Update checklist item",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://graph.microsoft.com/v1.0/me/todo/lists/:todoTaskListId/tasks/:todoTaskId/checklistItems/:checklistItemId",
+            "params": [
+              {
+                "name": "todoTaskListId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "todoTaskId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "checklistItemId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update checklist item"
+        },
+        {
+          "info": {
+            "name": "Delete checklist item",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://graph.microsoft.com/v1.0/me/todo/lists/:todoTaskListId/tasks/:todoTaskId/checklistItems/:checklistItemId",
+            "params": [
+              {
+                "name": "todoTaskListId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "todoTaskId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "checklistItemId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete checklist item"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "LinkedResources",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List linked resources",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.microsoft.com/v1.0/me/todo/lists/:todoTaskListId/tasks/:todoTaskId/linkedResources",
+            "params": [
+              {
+                "name": "todoTaskListId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "todoTaskId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List linked resources"
+        },
+        {
+          "info": {
+            "name": "Create linked resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://graph.microsoft.com/v1.0/me/todo/lists/:todoTaskListId/tasks/:todoTaskId/linkedResources",
+            "params": [
+              {
+                "name": "todoTaskListId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "todoTaskId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create linked resource"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
