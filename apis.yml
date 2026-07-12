@@ -39,6 +39,12 @@ apis:
       create, read, update, and delete task lists and individual tasks, manage task completion status, set due dates and
       reminders, add file attachments, and organize tasks with linked resources across Microsoft 365.
 common:
+  - type: VulnerabilityDisclosure
+    url: security/microsoft-to-do-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/microsoft-to-do-domain-security.yml
+  - type: Authentication
+    url: authentication/microsoft-to-do-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/microsoft
   - type: Portal
