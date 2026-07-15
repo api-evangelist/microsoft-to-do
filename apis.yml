@@ -39,6 +39,8 @@ apis:
       create, read, update, and delete task lists and individual tasks, manage task completion status, set due dates and
       reminders, add file attachments, and organize tasks with linked resources across Microsoft 365.
 common:
+  - type: AgenticAccess
+    url: agentic-access/microsoft-to-do-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/microsoft-to-do-vulnerability-disclosure.yml
   - type: DomainSecurity
