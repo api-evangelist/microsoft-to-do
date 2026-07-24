@@ -1,0 +1,76 @@
+openapi: 3.1.0
+info:
+  title: Microsoft To Do API (Microsoft Graph) ChecklistItems LinkedResources API
+  description: Minimal OpenAPI definition for the Microsoft To Do API exposed via Microsoft Graph for managing task lists, tasks, checklist items, and linked resources.
+  version: v1.0
+  x-generated-from: https://learn.microsoft.com/en-us/graph/api/resources/todo-overview
+  x-generated-by: claude-crawl-2026-05-08
+servers:
+- url: https://graph.microsoft.com/v1.0
+  description: Microsoft Graph v1.0
+security:
+- bearerAuth: []
+tags:
+- name: LinkedResources
+paths:
+  /me/todo/lists/{todoTaskListId}/tasks/{todoTaskId}/linkedResources:
+    parameters:
+    - $ref: '#/components/parameters/TaskListId'
+    - $ref: '#/components/parameters/TaskId'
+    get:
+      tags:
+      - LinkedResources
+      summary: List linked resources
+      operationId: listLinkedResources
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericList'
+    post:
+      tags:
+      - LinkedResources
+      summary: Create linked resource
+      operationId: createLinkedResource
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '201':
+          description: Created
+components:
+  parameters:
+    TaskId:
+      in: path
+      name: todoTaskId
+      required: true
+      schema:
+        type: string
+    TaskListId:
+      in: path
+      name: todoTaskListId
+      required: true
+      schema:
+        type: string
+  schemas:
+    GenericObject:
+      type: object
+      additionalProperties: true
+    GenericList:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericObject'
+      additionalProperties: true
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

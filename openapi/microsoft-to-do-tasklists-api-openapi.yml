@@ -1,0 +1,100 @@
+openapi: 3.1.0
+info:
+  title: Microsoft To Do API (Microsoft Graph) ChecklistItems TaskLists API
+  description: Minimal OpenAPI definition for the Microsoft To Do API exposed via Microsoft Graph for managing task lists, tasks, checklist items, and linked resources.
+  version: v1.0
+  x-generated-from: https://learn.microsoft.com/en-us/graph/api/resources/todo-overview
+  x-generated-by: claude-crawl-2026-05-08
+servers:
+- url: https://graph.microsoft.com/v1.0
+  description: Microsoft Graph v1.0
+security:
+- bearerAuth: []
+tags:
+- name: TaskLists
+paths:
+  /me/todo/lists:
+    get:
+      tags:
+      - TaskLists
+      summary: List todoTaskLists
+      operationId: listTodoTaskLists
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericList'
+    post:
+      tags:
+      - TaskLists
+      summary: Create todoTaskList
+      operationId: createTodoTaskList
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '201':
+          description: Created
+  /me/todo/lists/{todoTaskListId}:
+    parameters:
+    - $ref: '#/components/parameters/TaskListId'
+    get:
+      tags:
+      - TaskLists
+      summary: Get todoTaskList
+      operationId: getTodoTaskList
+      responses:
+        '200':
+          description: OK
+    patch:
+      tags:
+      - TaskLists
+      summary: Update todoTaskList
+      operationId: updateTodoTaskList
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags:
+      - TaskLists
+      summary: Delete todoTaskList
+      operationId: deleteTodoTaskList
+      responses:
+        '204':
+          description: No Content
+components:
+  parameters:
+    TaskListId:
+      in: path
+      name: todoTaskListId
+      required: true
+      schema:
+        type: string
+  schemas:
+    GenericObject:
+      type: object
+      additionalProperties: true
+    GenericList:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericObject'
+      additionalProperties: true
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
