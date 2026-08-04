@@ -1,0 +1,20 @@
+{
+  "provider": "microsoft-to-do",
+  "sources": [
+    "microsoft-to-do-checklistitems-api-openapi.yml",
+    "microsoft-to-do-linkedresources-api-openapi.yml",
+    "microsoft-to-do-tasklists-api-openapi.yml",
+    "microsoft-to-do-tasks-api-openapi.yml"
+  ],
+  "outputs": [
+    "microsoft-to-do-checklistitems-api-openapi.yml",
+    "microsoft-to-do-linkedresources-api-openapi.yml",
+    "microsoft-to-do-tasklists-api-openapi.yml",
+    "microsoft-to-do-tasks-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
