@@ -26,7 +26,7 @@ tags:
 url: https://raw.githubusercontent.com/api-evangelist/microsoft-to-do/refs/heads/main/apis.yml
 created: '2024-01-01'
 modified: '2026-05-19'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: microsoft-to-do:microsoft-to-do-checklistitems-api
   name: Microsoft to Do ChecklistItems API
