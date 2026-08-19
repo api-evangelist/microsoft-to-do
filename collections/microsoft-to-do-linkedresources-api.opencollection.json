@@ -1,0 +1,74 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Microsoft To Do API (Microsoft Graph) ChecklistItems LinkedResources API",
+    "version": "v1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "LinkedResources",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List linked resources",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.microsoft.com/v1.0/me/todo/lists/:todoTaskListId/tasks/:todoTaskId/linkedResources",
+            "params": [
+              {
+                "name": "todoTaskListId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "todoTaskId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List linked resources"
+        },
+        {
+          "info": {
+            "name": "Create linked resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://graph.microsoft.com/v1.0/me/todo/lists/:todoTaskListId/tasks/:todoTaskId/linkedResources",
+            "params": [
+              {
+                "name": "todoTaskListId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "todoTaskId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create linked resource"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
