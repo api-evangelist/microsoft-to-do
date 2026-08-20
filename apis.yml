@@ -20,6 +20,11 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/microsoft-to-do.png
 tags:
   - Microsoft
+  - Microsoft-365
+  - Productivity
+  - Task
+tags_raw:
+  - Microsoft
   - Microsoft 365
   - Productivity
   - Tasks
@@ -82,6 +87,8 @@ apis:
   humanURL: https://learn.microsoft.com/en-us/graph/api/resources/todo-overview
   baseURL: https://graph.microsoft.com/v1.0/
   tags:
+  - Task
+  tags_raw:
   - Tasks
   properties:
   - type: OpenAPI
