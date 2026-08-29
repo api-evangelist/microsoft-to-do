@@ -4,6 +4,18 @@ description: >-
   Microsoft To Do is a task management application that helps users organize and manage their day. It provides API
   access through Microsoft Graph for managing task lists and tasks across Microsoft 365.
 type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
