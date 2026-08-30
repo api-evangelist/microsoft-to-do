@@ -51,6 +51,8 @@ apis:
   humanURL: https://learn.microsoft.com/en-us/graph/api/resources/todo-overview
   baseURL: https://graph.microsoft.com/v1.0/
   tags:
+  - Checklist Items
+  tags_raw:
   - ChecklistItems
   properties:
   - type: OpenAPI
