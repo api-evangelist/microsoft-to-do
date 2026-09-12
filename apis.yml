@@ -41,7 +41,7 @@ tags_raw:
   - Microsoft 365
   - Productivity
   - Tasks
-url: https://raw.githubusercontent.com/api-evangelist/microsoft-to-do/refs/heads/main/apis.yml
+url: https://www.microsoft.com/en-us/microsoft-365/microsoft-to-do-list-app
 created: '2024-01-01'
 modified: '2026-05-19'
 specificationVersion: '0.23'
@@ -156,5 +156,5 @@ integrations:
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
-x-parent: microsoft
+x-parent: microsoft-365
 x-relationship: product
