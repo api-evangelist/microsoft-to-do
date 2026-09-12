@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Microsoft To Do API (Microsoft Graph) ChecklistItems LinkedResources API
+  title: Microsoft To Do API (Microsoft Graph) ChecklistItems Linked Resources API
   description: Minimal OpenAPI definition for the Microsoft To Do API exposed via Microsoft Graph for managing task lists, tasks, checklist items, and linked resources.
   version: v1.0
   x-generated-from: https://learn.microsoft.com/en-us/graph/api/resources/todo-overview
@@ -44,6 +44,18 @@ paths:
         '201':
           description: Created
 components:
+  schemas:
+    GenericObject:
+      type: object
+      additionalProperties: true
+    GenericList:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericObject'
+      additionalProperties: true
   parameters:
     TaskId:
       in: path
@@ -57,18 +69,6 @@ components:
       required: true
       schema:
         type: string
-  schemas:
-    GenericObject:
-      type: object
-      additionalProperties: true
-    GenericList:
-      type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/GenericObject'
-      additionalProperties: true
   securitySchemes:
     bearerAuth:
       type: http
