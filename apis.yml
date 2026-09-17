@@ -46,24 +46,6 @@ created: '2024-01-01'
 modified: '2026-05-19'
 specificationVersion: '0.23'
 apis:
-- aid: microsoft-to-do:microsoft-to-do-checklistitems-api
-  name: Microsoft to Do ChecklistItems API
-  description: The ChecklistItems API from Microsoft to Do — 2 operation(s) for checklistitems.
-  humanURL: https://learn.microsoft.com/en-us/graph/api/resources/todo-overview
-  baseURL: https://graph.microsoft.com/v1.0/
-  tags:
-  - Checklist Items
-  tags_raw:
-  - ChecklistItems
-  properties:
-  - type: OpenAPI
-    url: openapi/microsoft-to-do-checklistitems-api-openapi.yml
-  - type: Documentation
-    url: https://learn.microsoft.com/en-us/graph/api/resources/todo-overview
-  - type: Reference
-    url: https://learn.microsoft.com/en-us/graph/api/resources/todotask
-  - type: Authentication
-    url: https://learn.microsoft.com/en-us/graph/auth/
 - aid: microsoft-to-do:microsoft-to-do-linkedresources-api
   name: Microsoft to Do LinkedResources API
   description: The LinkedResources API from Microsoft to Do — 1 operation(s) for linkedresources.
@@ -108,6 +90,22 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/microsoft-to-do-tasks-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/graph/api/resources/todo-overview
+  - type: Reference
+    url: https://learn.microsoft.com/en-us/graph/api/resources/todotask
+  - type: Authentication
+    url: https://learn.microsoft.com/en-us/graph/auth/
+- aid: microsoft-to-do:microsoft-to-do-checklist-items-api
+  name: Microsoft to Do Checklist Items API
+  description: The Checklist Items API from Microsoft to Do — 2 operation(s) for checklist items.
+  humanURL: https://learn.microsoft.com/en-us/graph/api/resources/todo-overview
+  baseURL: https://graph.microsoft.com/v1.0/
+  tags:
+  - Checklist Items
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-to-do-checklist-items-api-openapi.yml
   - type: Documentation
     url: https://learn.microsoft.com/en-us/graph/api/resources/todo-overview
   - type: Reference
