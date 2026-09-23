@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Microsoft To Do API (Microsoft Graph) ChecklistItems Linked Resources API
+  title: Microsoft To Do API (Microsoft Graph) Linked Resources API
   description: Minimal OpenAPI definition for the Microsoft To Do API exposed via Microsoft Graph for managing task lists, tasks, checklist items, and linked resources.
   version: v1.0
   x-generated-from: https://learn.microsoft.com/en-us/graph/api/resources/todo-overview

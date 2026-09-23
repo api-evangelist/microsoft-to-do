@@ -11,7 +11,7 @@ servers:
 security:
 - bearerAuth: []
 tags:
-- name: ChecklistItems
+- name: Checklist Items
 paths:
   /me/todo/lists/{todoTaskListId}/tasks/{todoTaskId}/checklistItems:
     parameters:
@@ -19,7 +19,7 @@ paths:
     - $ref: '#/components/parameters/TaskId'
     get:
       tags:
-      - ChecklistItems
+      - Checklist Items
       summary: List checklist items
       operationId: listChecklistItems
       responses:
@@ -31,7 +31,7 @@ paths:
                 $ref: '#/components/schemas/GenericList'
     post:
       tags:
-      - ChecklistItems
+      - Checklist Items
       summary: Create checklist item
       operationId: createChecklistItem
       requestBody:
@@ -54,7 +54,7 @@ paths:
         type: string
     get:
       tags:
-      - ChecklistItems
+      - Checklist Items
       summary: Get checklist item
       operationId: getChecklistItem
       responses:
@@ -62,7 +62,7 @@ paths:
           description: OK
     patch:
       tags:
-      - ChecklistItems
+      - Checklist Items
       summary: Update checklist item
       operationId: updateChecklistItem
       requestBody:
@@ -76,7 +76,7 @@ paths:
           description: OK
     delete:
       tags:
-      - ChecklistItems
+      - Checklist Items
       summary: Delete checklist item
       operationId: deleteChecklistItem
       responses:

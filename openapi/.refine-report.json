@@ -1,10 +1,7 @@
 {
   "provider": "microsoft-to-do",
   "sources": [
-    "microsoft-to-do-checklistitems-api-openapi.yml",
-    "microsoft-to-do-linkedresources-api-openapi.yml",
-    "microsoft-to-do-tasklists-api-openapi.yml",
-    "microsoft-to-do-tasks-api-openapi.yml"
+    "_ae-authored/microsoft-to-do-openapi.yml"
   ],
   "outputs": [
     "microsoft-to-do-checklistitems-api-openapi.yml",
@@ -12,15 +9,21 @@
     "microsoft-to-do-tasklists-api-openapi.yml",
     "microsoft-to-do-tasks-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
   "notes": [
-    "microsoft-to-do-checklistitems-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "microsoft-to-do-linkedresources-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "microsoft-to-do-tasklists-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "microsoft-to-do-tasks-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "apis.yml register: already-registered"
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "microsoft-to-do-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "superseded outputs removed: microsoft-to-do-checklist-items-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 4 total)"
   ],
-  "skipped": []
+  "skipped": [
+    "microsoft-to-do-checklist-items-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "microsoft-to-do-linkedresources-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "microsoft-to-do-tasklists-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "microsoft-to-do-tasks-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
