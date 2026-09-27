@@ -33,7 +33,7 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/microsoft-to-do.png
 tags:
   - Microsoft
-  - Microsoft-365
+  - Microsoft 365
   - Productivity
   - Task
 tags_raw:
@@ -41,6 +41,7 @@ tags_raw:
   - Microsoft 365
   - Productivity
   - Tasks
+  - Microsoft-365
 url: https://www.microsoft.com/en-us/microsoft-365/microsoft-to-do-list-app
 created: '2024-01-01'
 modified: '2026-05-19'
