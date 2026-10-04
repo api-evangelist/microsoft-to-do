@@ -44,6 +44,19 @@ paths:
         '201':
           description: Created
 components:
+  parameters:
+    TaskListId:
+      in: path
+      name: todoTaskListId
+      required: true
+      schema:
+        type: string
+    TaskId:
+      in: path
+      name: todoTaskId
+      required: true
+      schema:
+        type: string
   schemas:
     GenericObject:
       type: object
@@ -56,19 +69,6 @@ components:
           items:
             $ref: '#/components/schemas/GenericObject'
       additionalProperties: true
-  parameters:
-    TaskId:
-      in: path
-      name: todoTaskId
-      required: true
-      schema:
-        type: string
-    TaskListId:
-      in: path
-      name: todoTaskListId
-      required: true
-      schema:
-        type: string
   securitySchemes:
     bearerAuth:
       type: http
