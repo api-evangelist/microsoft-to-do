@@ -114,6 +114,12 @@ apis:
   - type: Authentication
     url: https://learn.microsoft.com/en-us/graph/auth/
 common:
+  - type: Plans
+    url: plans/microsoft-to-do-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/microsoft-to-do-rate-limits.yml
+  - type: FinOps
+    url: finops/microsoft-to-do-finops.yml
   - type: AgenticAccess
     url: agentic-access/microsoft-to-do-agentic-access.yml
   - type: VulnerabilityDisclosure
