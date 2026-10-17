@@ -74,17 +74,7 @@ paths:
         '204':
           description: No Content
 components:
-  parameters:
-    TaskListId:
-      in: path
-      name: todoTaskListId
-      required: true
-      schema:
-        type: string
   schemas:
-    GenericObject:
-      type: object
-      additionalProperties: true
     GenericList:
       type: object
       properties:
@@ -93,6 +83,16 @@ components:
           items:
             $ref: '#/components/schemas/GenericObject'
       additionalProperties: true
+    GenericObject:
+      type: object
+      additionalProperties: true
+  parameters:
+    TaskListId:
+      in: path
+      name: todoTaskListId
+      required: true
+      schema:
+        type: string
   securitySchemes:
     bearerAuth:
       type: http
