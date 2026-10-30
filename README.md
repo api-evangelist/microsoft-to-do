@@ -1,4 +1,4 @@
-# Microsoft to Do (microsoft-to-do)
+# Microsoft to Do
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,63 +66,125 @@
 
 Microsoft To Do is a task management application that helps users organize and manage their day. It provides API access through Microsoft Graph for managing task lists and tasks across Microsoft 365.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/microsoft-to-do/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/microsoft-to-do/refs/heads/main/apis.yml)
+**Areas:** Microsoft · Microsoft 365 · Productivity · Task
 
-## Scope
+## Microsoft to Do on APIs.io
 
-- **Type:** Index
+Everything profiled for Microsoft to Do is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/microsoft-to-do/](https://apis.io/providers/microsoft-to-do/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (4)
 
-- Microsoft
-- Microsoft 365
-- Productivity
-- Tasks
+- [Microsoft to Do LinkedResources API](https://apis.io/apis/microsoft-to-do/microsoft-to-do-linkedresources-api/) — The LinkedResources API from Microsoft to Do — 1 operation(s) for linkedresources.
+- [Microsoft to Do TaskLists API](https://apis.io/apis/microsoft-to-do/microsoft-to-do-tasklists-api/) — The TaskLists API from Microsoft to Do — 2 operation(s) for tasklists.
+- [Microsoft to Do Tasks API](https://apis.io/apis/microsoft-to-do/microsoft-to-do-tasks-api/) — The Tasks API from Microsoft to Do — 3 operation(s) for tasks.
+- [Microsoft to Do Checklist Items API](https://apis.io/apis/microsoft-to-do/microsoft-to-do-checklist-items-api/) — The Checklist Items API from Microsoft to Do — 2 operation(s) for checklist items.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2024-01-01
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Microsoft Graph to Do Tasks API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Microsoft Graph To Do Tasks API provides access to Microsoft To Do task lists and tasks. Developers can create, read, update, and delete task lists and individual tasks, manage task completion status, set due dates and reminders, add file attachments, and organize tasks with linked resources across Microsoft 365.
+- [Microsoft To Do Agentic Access](https://apis.io/agentic-access/microsoft-to-do/microsoft-to-do-agentic-access/)
 
-- **Human URL:** [https://learn.microsoft.com/en-us/graph/api/resources/todo-overview](https://learn.microsoft.com/en-us/graph/api/resources/todo-overview)
-- **Base URL:** `https://graph.microsoft.com/v1.0/`
+#### Collections (5)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Microsoft Graph
-- Productivity
-- Tasks
-- To Do
+- [Microsoft To Do API (Microsoft Graph)](https://apis.io/collections/microsoft-to-do/open-microsoft-to-do/)
+- [Microsoft To Do API (Microsoft Graph) ChecklistItems API](https://apis.io/collections/microsoft-to-do/open-microsoft-to-do-checklistitems-api/)
+- [Microsoft To Do API (Microsoft Graph) ChecklistItems LinkedResources API](https://apis.io/collections/microsoft-to-do/open-microsoft-to-do-linkedresources-api/)
+- [Microsoft To Do API (Microsoft Graph) ChecklistItems TaskLists API](https://apis.io/collections/microsoft-to-do/open-microsoft-to-do-tasklists-api/)
+- [Microsoft To Do API (Microsoft Graph) ChecklistItems Tasks API](https://apis.io/collections/microsoft-to-do/open-microsoft-to-do-tasks-api/)
 
-#### Properties
+#### Security (3)
 
-- [Documentation](https://learn.microsoft.com/en-us/graph/api/resources/todo-overview)
-- [Reference](https://learn.microsoft.com/en-us/graph/api/resources/todotask)
-- [Authentication](https://learn.microsoft.com/en-us/graph/auth/)
-- [OpenAPI](openapi/microsoft-to-do-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/microsoft-to-do.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/microsoft-to-do.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-## Common Properties
+- [Microsoft To Do Authentication](https://apis.io/security/microsoft-to-do/microsoft-to-do-authentication/)
+- [Microsoft To Do Domain Security](https://apis.io/security/microsoft-to-do/microsoft-to-do-domain-security/)
+- [Microsoft To Do Vulnerability Disclosure](https://apis.io/security/microsoft-to-do/microsoft-to-do-vulnerability-disclosure/)
 
-- [GitHub Organization](https://github.com/microsoft)
-- [Portal](https://to-do.microsoft.com/)
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Microsoft To Do Plans Pricing](https://apis.io/plans/microsoft-to-do/microsoft-to-do-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Microsoft To Do Rate Limits](https://apis.io/rate-limits/microsoft-to-do/microsoft-to-do-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Microsoft To Do Finops](https://apis.io/finops/microsoft-to-do/microsoft-to-do-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.microsoft.com/en-us/microsoft-365/microsoft-to-do-list-app)
 - [Documentation](https://learn.microsoft.com/en-us/graph/todo-concept-overview)
-- [Authentication](https://learn.microsoft.com/en-us/graph/auth/)
-- [S D Ks](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview)
-- [Terms of Service](https://www.microsoft.com/en-us/legal/terms-of-use)
-- [Privacy Policy](https://privacy.microsoft.com/en-us/privacystatement)
 - [Support](https://support.microsoft.com/)
-- [Integrations](https://www.microsoft.com/en-us/marketplace)
+- [Terms of service](https://www.microsoft.com/en-us/legal/terms-of-use)
+- [Privacy policy](https://privacy.microsoft.com/en-us/privacystatement)
+- [GitHub](https://github.com/microsoft)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 35.6** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 60.7 |
+| Contract quality | 46.3 |
+| Contract governance | 0.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 50.0 |
+| Access clarity | 28.9 |
+
+**Agent readiness 17.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 25.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/microsoft-to-do/](https://apis.io/providers/microsoft-to-do/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Microsoft to Do: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/microsoft-to-do/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
